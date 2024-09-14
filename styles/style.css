@@ -1,0 +1,243 @@
+@font-face {
+    font-family: 'JMHBeda'; /* Nome da fonte */
+    src: url('fonts/JMHBeda.otf') format('opentype'), /* Carrega a fonte .otf */
+         url('fonts/JMHBeda.ttf') format('truetype'); /* Carrega a fonte .ttf */
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/* Define a cor de fundo da página */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'JMHBeda', serif;
+    color: rgb(110, 106, 106);
+    overflow-x: hidden;
+}
+
+/* Estilização básica do menu */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    padding: 20px;
+    position: relative;
+    z-index: 20; /* Garante que a barra superior e o menu estejam acima de tudo */
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    visibility: hidden; /* Menu inicialmente escondido */
+    z-index: 30; /* Coloca o menu acima da imagem e da sobreposição */
+    transition: visibility 0.3s, opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.button {
+    font-family: 'JMHBeda'; /* Aplica a fonte personalizada nos botões */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffffda;
+    color: rgb(3, 3, 3);
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    transition: background-color 0.5s;
+}
+
+.button:hover {
+    background-color: #fd0000;
+    color: rgba(255, 255, 255, 0.877);
+}
+
+/* Ícone de menu hambúrguer */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 30px;
+    padding: 10px;
+    z-index: 30; /* Garante que o ícone de hambúrguer esteja acima da imagem */
+}
+
+/* Classe "show" para exibir o menu */
+.show {
+    visibility: visible !important;
+    opacity: 1;
+}
+
+/* Estilo para a seção de fundo com imagem */
+.background {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Preenche toda a altura da tela */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* O fundo fica em um nível mais baixo */
+}
+
+.first-section {
+    background-image: url('/images/background.jpg'); /* Caminho para a primeira imagem de fundo */
+}
+
+/* Sobreposição para escurecer a imagem de fundo */
+.first-section .background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Centralização da imagem do logo */
+.centered-image-container {
+    position: absolute; /* Centraliza a imagem dentro da tela */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10; /* Coloca a imagem acima da sobreposição */
+}
+
+.centered-image {
+    max-width: 300px; /* Define um tamanho máximo para a imagem (ajuste conforme necessário) */
+    height: auto;
+}
+
+/* Aumenta o tamanho da logo em telas maiores */
+@media screen and (min-width: 1024px) {
+    .centered-image {
+        max-width: 900px; /* Aumenta o tamanho da logo em telas maiores */
+        height: auto;
+    }
+}
+
+/* Menu em linha para telas maiores */
+@media screen and (min-width: 769px) {
+    .button-container {
+        display: flex;
+        flex-direction: row; /* Muda a direção para linha */
+        justify-content: center; /* Centraliza os itens na horizontal */
+        align-items: center; /* Centraliza na vertical */
+        gap: 20px; /* Espaço entre os botões */
+        position: relative;
+        width: 100%; /* Garante que o contêiner de botões use a largura total */
+        top: auto;
+        left: auto;
+        transform: none;
+        visibility: visible;
+        z-index: 10;
+        opacity: 1;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 16px; /* Ajusta o tamanho do texto dos botões */
+    }
+
+    .hamburger {
+        display: none; /* Esconde o ícone de hambúrguer em telas maiores */
+    }
+}
+
+/* Menu responsivo (hamburguer) para telas menores */
+@media screen and (max-width: 768px) {
+    .button-container {
+        display: flex;
+        visibility: hidden; /* Menu escondido inicialmente */
+    }
+
+    .hamburger {
+        display: block; /* Mostra o ícone de hambúrguer */
+    }
+
+    .show {
+        visibility: visible !important; /* Mostra o menu ao clicar */
+        opacity: 1;
+    }
+}
+
+/* Estilo para a segunda seção com uma nova imagem de fundo */
+.second-section {
+    background-image: url('/images/background2.jpg'); /* Caminho para a segunda imagem de fundo */
+    background-size: cover; /* Garante que a imagem cubra a tela toda */
+    background-position: center; /* Centraliza a imagem de fundo */
+    background-repeat: no-repeat;
+    height: 100vh; /* Preenche a altura da tela */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* O fundo fica em um nível mais baixo */
+}
+
+/* Sobreposição para escurecer a imagem de fundo da second-section */
+.second-section .background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Sobreposição escura */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Centralização do conteúdo na second-section */
+.second-section .centered-image-container {
+    position: relative; /* Para que fique dentro da seção e siga as margens */
+    z-index: 10; /* Coloca o conteúdo acima da sobreposição */
+    color: white; /* Define a cor do texto */
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Estilo do conteúdo textual */
+.second-section .band-info {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semitransparente para o texto */
+    border-radius: 10px; /* Borda arredondada */
+    max-width: 600px; /* Define uma largura máxima para o conteúdo */
+    margin: 0 auto; /* Centraliza o conteúdo */
+}
+
+.second-section .band-info h2 {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+    color: white;
+}
+
+.second-section .band-info p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: white;
+}
+
+/* Estilo do rodapé */
+.footer {
+    background-color: #201b1b;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 14px;
+    width: 100%;
+    text-decoration: none;
+}
