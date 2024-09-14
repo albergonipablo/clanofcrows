@@ -6,8 +6,6 @@
     font-style: normal;
 }
 
-
-
 /* Define a cor de fundo da página */
 body {
     margin: 0;
@@ -28,6 +26,7 @@ body {
     z-index: 20; /* Garante que a barra superior e o menu estejam acima de tudo */
 }
 
+/* Container do menu */
 .button-container {
     display: flex;
     flex-direction: column;
@@ -122,7 +121,7 @@ body {
     height: auto;
 }
 
-/* Aumenta o tamanho da logo em telas maiores */
+/* Ajustes para telas maiores */
 @media screen and (min-width: 1024px) {
     .centered-image {
         max-width: 900px; /* Aumenta o tamanho da logo em telas maiores */
@@ -169,6 +168,24 @@ body {
         display: block; /* Mostra o ícone de hambúrguer */
     }
 
+    .centered-image-container {
+        top: 40%; /* Mover logo para cima em dispositivos móveis */
+    }
+
+    .background {
+        background-position: center top; /* Garante que o fundo comece do topo */
+    }
+
+    .top-bar {
+        padding: 10px; /* Ajuste o padding para evitar sobreposição */
+    }
+
+    .button {
+        width: 100%; /* Botões ocupam a largura total */
+        margin: 5px 0; /* Espaçamento entre os botões */
+        font-size: 16px;
+    }
+
     .show {
         visibility: visible !important; /* Mostra o menu ao clicar */
         opacity: 1;
@@ -179,9 +196,9 @@ body {
 .second-section {
     background-image: url('/images/background2.jpg'); /* Caminho para a segunda imagem de fundo */
     background-size: cover; /* Garante que a imagem cubra a tela toda */
-    background-position: center; /* Centraliza a imagem de fundo */
+    background-position: center top; /* Começa do topo */
     background-repeat: no-repeat;
-    height: 100vh; /* Preenche a altura da tela */
+    height: auto; /* Preenche a altura de acordo com o conteúdo */
     position: relative;
     display: flex;
     justify-content: center;
@@ -211,7 +228,7 @@ body {
 }
 
 /* Estilo do conteúdo textual */
-.second-section .band-info {
+.band-info {
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.7); /* Fundo semitransparente para o texto */
     border-radius: 10px; /* Borda arredondada */
@@ -219,13 +236,13 @@ body {
     margin: 0 auto; /* Centraliza o conteúdo */
 }
 
-.second-section .band-info h2 {
+.band-info h2 {
     margin-bottom: 10px;
     font-size: 2.5rem;
     color: white;
 }
 
-.second-section .band-info p {
+.band-info p {
     font-size: 1.2rem;
     line-height: 1.6;
     color: white;
