@@ -1,9 +1,7 @@
 @font-face {
     font-family: 'JMHBeda'; /* Nome da fonte */
-    src: url('fonts/JMHBeda.otf') format('opentype'), /* Carrega a fonte .otf */
-         url('fonts/JMHBeda.ttf') format('truetype'); /* Carrega a fonte .ttf */
-    font-weight: normal;
-    font-style: normal;
+    src: url('../fontsGotic/JMHBeda.otf') format('opentype'),
+         url('../fontsGotic/JMHBeda.ttf') format('truetype');
 }
 
 /* Define a cor de fundo da página */
@@ -21,7 +19,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: rgb(0, 0, 0);
-    padding: 20px;
+    padding: 6px;
     position: relative;
     z-index: 20; /* Garante que a barra superior e o menu estejam acima de tudo */
 }
@@ -30,7 +28,7 @@ body {
 .button-container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px; /* Espaço entre os botões em telas pequenas (mobile) */
     position: fixed;
     top: 50%;
     left: 50%;
@@ -91,7 +89,11 @@ body {
 }
 
 .first-section {
-    background-image: url('/images/background.jpg'); /* Caminho para a primeira imagem de fundo */
+    background-image: url('/images/background.jpg');
+}
+
+.second-section {
+    background-image: url('/images/background2.jpg');
 }
 
 /* Sobreposição para escurecer a imagem de fundo */
@@ -136,7 +138,7 @@ body {
         flex-direction: row; /* Muda a direção para linha */
         justify-content: center; /* Centraliza os itens na horizontal */
         align-items: center; /* Centraliza na vertical */
-        gap: 20px; /* Espaço entre os botões */
+        gap: 40px; /* Aumenta o espaço entre os botões em telas maiores (desktop) */
         position: relative;
         width: 100%; /* Garante que o contêiner de botões use a largura total */
         top: auto;
