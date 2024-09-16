@@ -91,10 +91,7 @@ body {
     padding: 0;
 }
 
-/* Primeira Seção */
-.first-section {
-    background-image: url('/images/background.jpg');
-}
+
 
 /* Segunda Seção */
 .second-section {
@@ -116,17 +113,24 @@ body {
     align-items: center;
 }
 
+/* Ajuste da primeira seção */
+.first-section {
+    background-image: url('/images/background.jpg');
+    min-height: 100vh; /* Preenche toda a altura da tela */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha o conteúdo próximo ao topo */
+    position: relative;
+    padding-top: 1px; /* Adiciona um padding-top para ajustar a distância do topo ao conteúdo */
+}
+
 /* Centralização da imagem do logo */
 .centered-image-container {
-    position: absolute; /* Centraliza a imagem dentro da tela */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Centraliza a logo vertical e horizontalmente */
-    z-index: 10; /* Coloca a imagem acima da sobreposição */
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 100%;
+    z-index: 10; /* Certifica-se de que a imagem fique acima de outros elementos */
 }
 
 .centered-image {
@@ -186,10 +190,6 @@ body {
 
     .hamburger {
         display: block; /* Mostra o ícone de hambúrguer */
-    }
-
-    .centered-image-container {
-        top: 40%; /* Mover logo para cima em dispositivos móveis */
     }
 
     .background {
