@@ -118,24 +118,29 @@ body {
 
 /* Centralização da imagem do logo */
 .centered-image-container {
-    position: relative;
-    z-index: 10;
+    position: absolute; /* Centraliza a imagem dentro da tela */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza a logo vertical e horizontalmente */
+    z-index: 10; /* Coloca a imagem acima da sobreposição */
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 100%;
 }
 
 .centered-image {
-    max-width: 300px;
+    max-width: 90%; /* Ajuste para telas menores */
     height: auto;
 }
 
 /* Ajustes para telas maiores */
 @media screen and (min-width: 1024px) {
     .centered-image {
-        max-width: 900px;
+        max-width: 600px; /* Tamanho maior para a logo em telas maiores */
     }
 }
+
 
 /* Ajustes para telas menores */
 @media screen and (max-width: 768px) {
