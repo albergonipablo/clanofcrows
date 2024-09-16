@@ -28,7 +28,7 @@ body {
 .button-container {
     display: flex;
     flex-direction: column;
-    gap: 30px; /* Espaço entre os botões em telas pequenas (mobile) */
+    gap: 10px; /* Reduza o valor do gap para aproximar os botões */
     position: fixed;
     top: 50%;
     left: 50%;
@@ -37,37 +37,53 @@ body {
     padding: 20px;
     border-radius: 10px;
     visibility: hidden; /* Menu inicialmente escondido */
-    z-index: 30; /* Coloca o menu acima da imagem e da sobreposição */
+    z-index: 30;
     transition: visibility 0.5s, opacity 0.5s ease-in-out;
     opacity: 0;
-    width: auto; /* Permite ajuste automático da largura do container */
+    width: auto;
 }
 
 /* Estilo dos botões */
 .button {
     font-family: 'JMHBeda'; /* Aplica a fonte personalizada nos botões */
-    padding: 10px 25px;
+    padding: 5px 10px; /* Ajuste de padding para controle do espaçamento interno */
     border: none;
-    border-radius: 10px;
+    border-radius: 50px;
     background-color: #c7c19e; /* Cor de fundo dos botões */
     color: rgb(3, 3, 3);
     text-align: center;
     text-decoration: none;
     font-size: 20px;
     transition: background-color 0.9s;
-    width: 100%; /* Faz com que os botões ocupem toda a largura do container */
-    box-sizing: border-box; /* Garante que o padding seja considerado na largura */
+    width: auto;
+    box-sizing: border-box;
+    min-width: 200px;
+    max-width: 300px;
+    margin: 0 auto; /* Centraliza os botões horizontalmente */
 }
 
 /* Ajuste para garantir que o fundo envolva o texto corretamente */
 .button-container .button {
-    display: block; /* Garante que os botões sejam blocos e ocupem a largura correta */
-    max-width: 100%; /* Previne que os botões ultrapassem os limites do container */
+    display: inline-block;
+    max-width: 100%;
 }
 
 .button:hover {
     background-color: #fd0000;
     color: rgba(255, 255, 255, 0.877);
+}
+
+/* Ajustes específicos para telas maiores (desktop) */
+@media screen and (min-width: 1024px) {
+    .button-container {
+        flex-direction: row; /* Alinha os botões horizontalmente em telas grandes */
+        gap: 10px; /* Reduz o espaço entre os botões */
+        justify-content: center; /* Garante que os botões sejam centralizados */
+    }
+
+    .button {
+        margin: 0 10px; /* Adiciona margem horizontal entre os botões */
+    }
 }
 
 /* Ícone de menu hambúrguer */
