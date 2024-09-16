@@ -80,24 +80,31 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh; /* Preenche toda a altura da tela */
+    width: 100%;
+    min-height: 100vh; /* Preenche toda a altura da tela */
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1; /* O fundo fica em um nível mais baixo */
+    margin: 0;
+    padding: 0;
 }
 
+/* Primeira Seção */
 .first-section {
     background-image: url('/images/background.jpg');
 }
 
+/* Segunda Seção */
 .second-section {
     background-image: url('/images/background2.jpg');
+    min-height: 100vh; /* Preenche toda a altura da tela */
+    background-position: center; /* Ajuste da imagem de fundo */
 }
 
-/* Sobreposição para escurecer a imagem de fundo */
-.first-section .background-overlay {
+/* Sobreposição para escurecer as imagens de fundo */
+.background .background-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -111,23 +118,29 @@ body {
 
 /* Centralização da imagem do logo */
 .centered-image-container {
-    position: absolute; /* Centraliza a imagem dentro da tela */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10; /* Coloca a imagem acima da sobreposição */
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .centered-image {
-    max-width: 300px; /* Define um tamanho máximo para a imagem (ajuste conforme necessário) */
+    max-width: 300px;
     height: auto;
 }
 
 /* Ajustes para telas maiores */
 @media screen and (min-width: 1024px) {
     .centered-image {
-        max-width: 900px; /* Aumenta o tamanho da logo em telas maiores */
-        height: auto;
+        max-width: 900px;
+    }
+}
+
+/* Ajustes para telas menores */
+@media screen and (max-width: 768px) {
+    .centered-image-container {
+        top: 40%;
     }
 }
 
@@ -192,41 +205,6 @@ body {
         visibility: visible !important; /* Mostra o menu ao clicar */
         opacity: 1;
     }
-}
-
-/* Estilo para a segunda seção com uma nova imagem de fundo */
-.second-section {
-    background-image: url('/images/background2.jpg'); /* Caminho para a segunda imagem de fundo */
-    background-size: cover; /* Garante que a imagem cubra a tela toda */
-    background-position: center top; /* Começa do topo */
-    background-repeat: no-repeat;
-    height: auto; /* Preenche a altura de acordo com o conteúdo */
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1; /* O fundo fica em um nível mais baixo */
-}
-
-/* Sobreposição para escurecer a imagem de fundo da second-section */
-.second-section .background-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Sobreposição escura */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Centralização do conteúdo na second-section */
-.second-section .centered-image-container {
-    position: relative; /* Para que fique dentro da seção e siga as margens */
-    z-index: 10; /* Coloca o conteúdo acima da sobreposição */
-    color: white; /* Define a cor do texto */
-    text-align: center; /* Centraliza o texto */
 }
 
 /* Estilo do conteúdo textual */
