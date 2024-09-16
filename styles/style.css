@@ -38,21 +38,31 @@ body {
     border-radius: 10px;
     visibility: hidden; /* Menu inicialmente escondido */
     z-index: 30; /* Coloca o menu acima da imagem e da sobreposição */
-    transition: visibility 0.3s, opacity 0.3s ease-in-out;
+    transition: visibility 0.5s, opacity 0.5s ease-in-out;
     opacity: 0;
+    width: auto; /* Permite ajuste automático da largura do container */
 }
 
+/* Estilo dos botões */
 .button {
     font-family: 'JMHBeda'; /* Aplica a fonte personalizada nos botões */
-    padding: 10px 20px;
+    padding: 10px 25px;
     border: none;
     border-radius: 10px;
-    background-color: #ffffffda;
+    background-color: #c7c19e; /* Cor de fundo dos botões */
     color: rgb(3, 3, 3);
     text-align: center;
     text-decoration: none;
     font-size: 20px;
-    transition: background-color 0.5s;
+    transition: background-color 0.9s;
+    width: 100%; /* Faz com que os botões ocupem toda a largura do container */
+    box-sizing: border-box; /* Garante que o padding seja considerado na largura */
+}
+
+/* Ajuste para garantir que o fundo envolva o texto corretamente */
+.button-container .button {
+    display: block; /* Garante que os botões sejam blocos e ocupem a largura correta */
+    max-width: 100%; /* Previne que os botões ultrapassem os limites do container */
 }
 
 .button:hover {
@@ -64,7 +74,7 @@ body {
 .hamburger {
     display: none;
     cursor: pointer;
-    font-size: 30px;
+    font-size: 40px;
     padding: 10px;
     z-index: 30; /* Garante que o ícone de hambúrguer esteja acima da imagem */
 }
@@ -124,14 +134,21 @@ body {
     padding-top: 1px; /* Adiciona um padding-top para ajustar a distância do topo ao conteúdo */
 }
 
-/* Centralização da imagem do logo */
+/* Centralização horizontal e alinhamento ao topo da imagem do logo */
 .centered-image-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: flex-start; /* Alinha a logo ao topo */
     max-width: 100%;
     z-index: 10; /* Certifica-se de que a imagem fique acima de outros elementos */
+    position: absolute; /* Garante que o container fique posicionado em relação ao topo da seção */
+    top: 70px; /* Ajuste aqui para controlar a distância do topo (20px neste exemplo) */
+    left: 0;
+    right: 0;
+    padding-top: 0; /* Certifique-se de que não haja padding adicional */
 }
+
+
 
 .centered-image {
     max-width: 90%; /* Ajuste para telas menores */
@@ -149,7 +166,7 @@ body {
 /* Ajustes para telas menores */
 @media screen and (max-width: 768px) {
     .centered-image-container {
-        top: 40%;
+        top: 10%;
     }
 }
 
@@ -191,6 +208,7 @@ body {
     .hamburger {
         display: block; /* Mostra o ícone de hambúrguer */
     }
+
 
     .background {
         background-position: center top; /* Garante que o fundo comece do topo */
