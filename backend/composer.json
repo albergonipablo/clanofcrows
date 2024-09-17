@@ -1,0 +1,15 @@
+{
+    "name": "thedoctor/clanofcrows",
+    "description": "projeto do portal da banda",
+    "type": "project",
+    "require": {
+        "phpmailer/phpmailer": "^6.9",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "authors": [
+        {
+            "name": "pablo",
+            "email": "albergonipablo@gmail.com"
+        }
+    ]
+}
