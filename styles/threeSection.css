@@ -1,0 +1,66 @@
+.three-section {
+    background-image: url('/images/background3.jpg');
+    min-height: 100vh; /* Preenche toda a altura da tela */
+    background-position: center; /* Ajuste da imagem de fundo */
+    background-size: cover; /* Cobre todo o espaço da seção */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0 100px 0; /* Adiciona espaçamento interno na parte inferior */
+    overflow: hidden; /* Garante que o conteúdo não "vaze" para fora */
+}
+
+
+.three-section .about-us-text {
+    text-align: center; /* Centraliza o texto */
+    color: white; /* Altera a cor do texto para branco */
+    padding: 20px;
+    margin: 0 auto; /* Centraliza o conteúdo com margens automáticas */
+    max-width: 90%; /* Limita a largura para evitar vazamento em dispositivos menores */
+    box-sizing: border-box; /* Inclui padding nas dimensões totais do elemento */
+}
+
+.three-section h2 {
+    font-size: 2.5rem; /* Ajuste inicial do tamanho da fonte */
+    margin-bottom: 20px;
+    color: #c7c19e; /* Cor semelhante aos botões */
+    font-family: 'JMHBeda', serif; /* Usa a fonte personalizada */
+}
+
+.three-section p {
+    font-size: 1.2rem; /* Ajuste inicial do tamanho da fonte */
+    line-height: 1.6; /* Define o espaçamento entre linhas */
+    margin-bottom: 20px;
+    color: rgb(200, 200, 200); /* Texto mais claro */
+    font-family: 'JMHBeda', serif; /* Usa a fonte personalizada */
+    word-wrap: break-word; /* Quebra palavras longas se necessário */
+    overflow-wrap: break-word; /* Compatibilidade com navegadores mais antigos */
+}
+
+/* Ajuste para dispositivos menores */
+@media screen and (max-width: 768px) {
+    .three-section h2 {
+        font-size: 2rem; /* Reduz o tamanho do título em dispositivos menores */
+    }
+
+    .three-section p {
+        font-size: 1rem; /* Reduz o tamanho dos parágrafos em dispositivos menores */
+        line-height: 1.4; /* Reduz o espaçamento entre linhas */
+    }
+
+    .three-section .about-us-text {
+        padding: 10px; /* Reduz o espaçamento interno em dispositivos menores */
+    }
+}
+
+/* Ajuste para telas maiores */
+@media screen and (min-width: 1024px) {
+    .three-section h2 {
+        font-size: 4rem; /* Aumenta o tamanho do título em telas maiores */
+    }
+
+    .three-section p {
+        font-size: 1.8rem; /* Aumenta o tamanho dos parágrafos em telas maiores */
+        line-height: 1.8; /* Aumenta o espaçamento entre linhas */
+    }
+}

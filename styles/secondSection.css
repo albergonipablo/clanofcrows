@@ -1,3 +1,10 @@
+/* Segunda Seção */
+.second-section {
+    background-image: url('/images/background2.jpg');
+    min-height: 100vh; /* Preenche toda a altura da tela */
+    background-position: center; /* Ajuste da imagem de fundo */
+}
+
 /* Estilo para a segunda seção */
 .second-section .about-us-text {
     text-align: center; /* Centraliza o texto */
