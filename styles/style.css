@@ -4,13 +4,26 @@
          url('../fontsGotic/JMHBeda.ttf') format('truetype');
 }
 
-/* Define a cor de fundo da página */
-body {
+/* Garante que a altura da página seja 100% */
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
     font-family: 'JMHBeda', serif;
     color: rgb(110, 106, 106);
     overflow-x: hidden;
+}
+
+/* Wrapper que envolve o conteúdo e o rodapé */
+.body-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o conteúdo preencha a tela inteira */
+}
+
+/* Estilização do conteúdo principal para crescer e ocupar o espaço */
+.main-content {
+    flex: 1; /* Faz o conteúdo principal crescer e ocupar o espaço restante */
 }
 
 /* Estilização básica do menu */
@@ -117,8 +130,6 @@ body {
     padding: 0;
 }
 
-
-
 /* Segunda Seção */
 .second-section {
     background-image: url('/images/background2.jpg');
@@ -158,13 +169,11 @@ body {
     max-width: 100%;
     z-index: 10; /* Certifica-se de que a imagem fique acima de outros elementos */
     position: absolute; /* Garante que o container fique posicionado em relação ao topo da seção */
-    top: 70px; /* Ajuste aqui para controlar a distância do topo (20px neste exemplo) */
+    top: 70px; /* Ajuste aqui para controlar a distância do topo */
     left: 0;
     right: 0;
     padding-top: 0; /* Certifique-se de que não haja padding adicional */
 }
-
-
 
 .centered-image {
     max-width: 90%; /* Ajuste para telas menores */
@@ -177,7 +186,6 @@ body {
         max-width: 600px; /* Tamanho maior para a logo em telas maiores */
     }
 }
-
 
 /* Ajustes para telas menores */
 @media screen and (max-width: 768px) {
@@ -224,7 +232,6 @@ body {
     .hamburger {
         display: block; /* Mostra o ícone de hambúrguer */
     }
-
 
     .background {
         background-position: center top; /* Garante que o fundo comece do topo */
@@ -276,4 +283,6 @@ body {
     font-size: 14px;
     width: 100%;
     text-decoration: none;
+    position: relative;
+    bottom: 0; /* Garante que o rodapé fique no final da página */
 }
