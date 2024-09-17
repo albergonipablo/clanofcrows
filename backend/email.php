@@ -8,6 +8,7 @@ $dotenv->load();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+//teste commit.
 // Caminho do arquivo que armazenará os dados de contagem de e-mails
 $arquivo = __DIR__ . '/contagem_emails.json';
 
