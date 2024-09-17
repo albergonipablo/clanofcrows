@@ -1,0 +1,67 @@
+/* Seção de Contato */
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #2c2c2c; /* Fundo da seção */
+    padding: 50px 20px;
+}
+
+.contact-container {
+    background-color: #1f1f1f;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.contact-container h2 {
+    color: #c7c19e;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-container label {
+    display: block;
+    margin-top: 15px;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+.contact-container input,
+.contact-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.contact-container button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #c7c19e;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.contact-container button:hover {
+    background-color: #a8a37c;
+}
+
+.contact-container input:focus,
+.contact-container textarea:focus {
+    outline: none;
+    border-color: #c7c19e;
+}
