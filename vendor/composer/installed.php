@@ -1,15 +1,24 @@
 <?php return array(
     'root' => array(
-        'name' => 'thedoctor/clanofcrows',
+        'name' => '__root__',
         'pretty_version' => 'dev-develop',
         'version' => 'dev-develop',
-        'reference' => 'b138d67a689a9105e044f1f06ada8a6b4ac9aa34',
-        'type' => 'project',
+        'reference' => '5538426e54f0d9b33d4ec23425ec8946c2dec2e1',
+        'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
+        '__root__' => array(
+            'pretty_version' => 'dev-develop',
+            'version' => 'dev-develop',
+            'reference' => '5538426e54f0d9b33d4ec23425ec8946c2dec2e1',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'graham-campbell/result-type' => array(
             'pretty_version' => 'v1.1.3',
             'version' => '1.1.3.0',
@@ -61,15 +70,6 @@
             'reference' => '60328e362d4c2c802a54fcbf04f9d3fb892b4cf8',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/polyfill-php80',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
-        'thedoctor/clanofcrows' => array(
-            'pretty_version' => 'dev-develop',
-            'version' => 'dev-develop',
-            'reference' => 'b138d67a689a9105e044f1f06ada8a6b4ac9aa34',
-            'type' => 'project',
-            'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
