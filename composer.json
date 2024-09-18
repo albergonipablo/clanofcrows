@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
     "name": "thedoctor/clanofcrows",
     "description": "projeto do portal da banda",
     "type": "project",
@@ -13,11 +12,4 @@
             "email": "albergonipablo@gmail.com"
         }
     ]
-=======
-    "require": {
-        "symfony/polyfill-ctype": "^1.31",
-        "vlucas/phpdotenv": "^5.6",
-        "phpmailer/phpmailer": "^6.9"
-    }
->>>>>>> 8b053d3 (commit tudo funcionando)
 }
