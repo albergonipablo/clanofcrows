@@ -1,14 +1,15 @@
 <?php
 require 'vendor/autoload.php';
 
-// Carregar as variáveis de ambiente do arquivo .env
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+// Carregar as variáveis de ambiente do arquivo .env, se ele existir (para ambiente local)
+if (file_exists(__DIR__ . '/.env')) {
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+    $dotenv->load();
+}
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-//teste commit.
 // Caminho do arquivo que armazenará os dados de contagem de e-mails
 $arquivo = __DIR__ . '/contagem_emails.json';
 
@@ -58,8 +59,8 @@ if ($contagem['contador'] < 40) {
             $mail->isSMTP();
             $mail->Host       = 'smtp.gmail.com';
             $mail->SMTPAuth   = true;
-            $mail->Username   = $_ENV['GMAIL_USERNAME']; // Carrega do arquivo .env
-            $mail->Password   = $_ENV['GMAIL_PASSWORD']; // Carrega do arquivo .env
+            $mail->Username   = $_ENV['GMAIL_USERNAME'] ?? ''; // Carrega do arquivo .env ou do ambiente Heroku
+            $mail->Password   = $_ENV['GMAIL_PASSWORD'] ?? ''; // Carrega do arquivo .env ou do ambiente Heroku
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port       = 587;
 
