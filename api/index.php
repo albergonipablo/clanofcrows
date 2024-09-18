@@ -1,4 +1,9 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 require 'vendor/autoload.php';
 
 // Carregar as variáveis de ambiente do arquivo .env, se ele existir (para ambiente local)
@@ -11,7 +16,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 // Caminho do arquivo que armazenará os dados de contagem de e-mails
-$arquivo = __DIR__ . '/contagem_emails.json';
+$arquivo = __DIR__ . '/../contagem_emails.json';
 
 // Função para carregar a contagem de e-mails do arquivo
 function carregarContagem($arquivo) {
