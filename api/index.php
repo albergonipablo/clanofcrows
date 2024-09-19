@@ -1,5 +1,9 @@
 <?php
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 // Autoload do Composer
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -90,7 +94,7 @@ if ($contagem['contador'] < 40) {
 
             // Remetente e destinatário
             $mail->setFrom($email, $name);
-            $mail->addAddress('seuemail@gmail.com'); // Endereço do destinatário
+            $mail->addAddress('clanofcrows.contact@gmail.com'); // Endereço do destinatário
 
             // Conteúdo do e-mail
             $mail->isHTML(true);
