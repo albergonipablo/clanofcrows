@@ -1,7 +1,6 @@
 @font-face {
     font-family: 'JMHBeda'; /* Nome da fonte */
-    src: url('../fontsGotic/JMHBeda.otf') format('opentype'),
-         url('../fontsGotic/JMHBeda.ttf') format('truetype');
+    src: url('../fontsGotic/Super\ Rugged.ttf') format('opentype'),
 }
 
 /* Garante que a altura da página seja 100% */

@@ -1,22 +1,41 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// Autoload do Composer
+require __DIR__ . '/../vendor/autoload.php';
 
-require 'vendor/autoload.php';
 
-// Carregar as variáveis de ambiente do arquivo .env, se ele existir (para ambiente local)
+// Carregar as variáveis de ambiente do arquivo .env manualmente (para ambiente local ou de desenvolvimento)
 if (file_exists(__DIR__ . '/.env')) {
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-    $dotenv->load();
+    // Função para carregar o arquivo .env manualmente
+    function loadEnv($path) {
+        if (!file_exists($path)) {
+            throw new Exception(".env file not found");
+        }
+
+        $lines = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        foreach ($lines as $line) {
+            if (strpos(trim($line), '#') === 0) {
+                continue;
+            }
+
+            list($name, $value) = explode('=', $line, 2);
+            $_ENV[trim($name)] = trim($value);
+        }
+    }
+
+    // Carregar o arquivo .env
+    loadEnv(__DIR__ . '/.env');
 }
+
+// Variáveis de configuração (defina manualmente ou carregue do .env)
+$gmailUsername = $_ENV['GMAIL_USERNAME'] ?? 'clanofcrows.contact@gmail.com'; // Defina manualmente ou no .env
+$gmailPassword = $_ENV['GMAIL_PASSWORD'] ?? 'fgalojasnupiiber'; // Defina manualmente ou no .env
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 // Caminho do arquivo que armazenará os dados de contagem de e-mails
-$arquivo = __DIR__ . '/../contagem_emails.json';
+$arquivo = __DIR__ . '/contagem_emails.json';
 
 // Função para carregar a contagem de e-mails do arquivo
 function carregarContagem($arquivo) {
@@ -64,8 +83,8 @@ if ($contagem['contador'] < 40) {
             $mail->isSMTP();
             $mail->Host       = 'smtp.gmail.com';
             $mail->SMTPAuth   = true;
-            $mail->Username   = $_ENV['GMAIL_USERNAME'] ?? ''; // Carrega do arquivo .env ou do ambiente Heroku
-            $mail->Password   = $_ENV['GMAIL_PASSWORD'] ?? ''; // Carrega do arquivo .env ou do ambiente Heroku
+            $mail->Username   = $gmailUsername; // Carrega manualmente ou do .env
+            $mail->Password   = $gmailPassword; // Carrega manualmente ou do .env
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port       = 587;
 
@@ -95,4 +114,5 @@ if ($contagem['contador'] < 40) {
     // Se o limite diário foi atingido
     echo "Limite diário de 40 e-mails atingido. Tente novamente amanhã.";
 }
+
 ?>
